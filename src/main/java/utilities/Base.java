@@ -6,11 +6,13 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Listeners;
+import utilities.listeners.SuiteListeners;
+import utilities.listeners.TestListeners;
 
 import java.io.File;
 import java.net.URL;
 
-@Listeners({utilities.Listeners.class})
+@Listeners({TestListeners.class, SuiteListeners.class})
 public abstract class Base {
     protected AndroidDriver<AndroidElement> driver;
 

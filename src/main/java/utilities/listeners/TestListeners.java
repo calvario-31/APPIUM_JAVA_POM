@@ -1,10 +1,11 @@
-package utilities;
+package utilities.listeners;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utilities.Log;
 
-public class Listeners implements ITestListener {
+public class TestListeners implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         Log.startTest(result.getName());
@@ -18,13 +19,11 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         Log.endTest("FAILED", result.getName());
-        ITestListener.super.onTestFailure(result);
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
         Log.endTest("SKIPPED", result.getName());
-        ITestListener.super.onTestSkipped(result);
     }
 
     @Override
@@ -39,11 +38,11 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        Log.info("Beginning: " + context.getSuite().getName());
+        ITestListener.super.onStart(context);
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        Log.info("Ending: " + context.getSuite().getName());
+        ITestListener.super.onFinish(context);
     }
 }

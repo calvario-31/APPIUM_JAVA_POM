@@ -27,4 +27,9 @@ public class SuccessPage extends Page {
         Log.info("Clicking on back to home");
         $(buttonBackToHome).click();
     }
+
+    @Override
+    protected void waitPageToLoad() {
+;
+    }
 }

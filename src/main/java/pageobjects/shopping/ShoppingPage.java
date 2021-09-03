@@ -17,7 +17,7 @@ public class ShoppingPage extends Page {
 
     @Step("Going to detail of item: {0}")
     public void goToDetail(String itemName){
-        $$(title);
+        waitPageToLoad();
         Log.info("Clicking on the item name");
         $text(itemName).click();
     }
@@ -26,5 +26,10 @@ public class ShoppingPage extends Page {
     public boolean shoppingPageIsDisplayed(){
         Log.info("Verify shopping page is displayed");
         return elementIsDisplayed(title);
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(title);
     }
 }

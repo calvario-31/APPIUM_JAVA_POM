@@ -18,8 +18,13 @@ public class YourCartPage extends Page {
 
     @Step("Clicking on continue checkout")
     public void continueCheckout(){
-        $$(labelDescription);
+        waitPageToLoad();
         Log.info("Clicking on continue checkout");
         $description(buttonCheckout).click();
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(labelDescription);
     }
 }

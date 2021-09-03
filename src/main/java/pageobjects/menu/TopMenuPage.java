@@ -23,31 +23,34 @@ public class TopMenuPage extends Page {
 
     @Step("Logging out")
     public void logout(){
+        waitPageToLoad();
         Log.info("Clicking on the menu burger");
-        $$(menuBurger).click();
+        $(menuBurger).click();
         Log.info("Clicking on logout");
         $$(logoutOption).click();
     }
 
     @Step("Go to drawing")
     public void goToDrawing(){
+        waitPageToLoad();
         Log.info("Clicking on the menu burger");
-        $$(menuBurger).click();
+        $(menuBurger).click();
         Log.info("Clicking on drawing");
         $$(drawingOption).click();
     }
 
     @Step("Go to web view")
     public void goToWebView(){
+        waitPageToLoad();
         Log.info("Clicking on the menu burger");
-        $$(menuBurger).click();
+        $(menuBurger).click();
         Log.info("Clicking on web view");
         $$(webViewOption).click();
     }
 
     @Step("Getting the item count text")
     public int getItemCount(){
-        $$(menuBurger);
+        waitPageToLoad();
         Log.info("Getting the item count text");
         String text = $(itemCount).getText();
         Log.debug("Item count: " + text);
@@ -58,5 +61,10 @@ public class TopMenuPage extends Page {
     public void goToCheckout(){
         Log.info("Clicking on checkout");
         $(buttonCheckout).click();
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(menuBurger);
     }
 }

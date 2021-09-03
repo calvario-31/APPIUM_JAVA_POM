@@ -14,6 +14,7 @@ import java.util.Set;
 public class WebViewPage extends Page {
     private final By inputUrl = MobileBy.AccessibilityId("test-enter a https url here...");
     private final By buttonGoToSite = MobileBy.AccessibilityId("test-GO TO SITE");
+    private final By bodyWebView = MobileBy.AccessibilityId("test-WEBVIEW SELECTION");
 
     public WebViewPage(AndroidDriver<AndroidElement> driver) {
         super(driver, 5);
@@ -21,9 +22,10 @@ public class WebViewPage extends Page {
 
     @Step("Going to web page {0}")
     public void goToWebPage(String url){
+        waitPageToLoad();
         Log.info("Filling the url input");
         Log.debug("Url: " + url);
-        $$(inputUrl).sendKeys(url);
+        $(inputUrl).sendKeys(url);
         Log.info("Clicking on the go to site button");
         $(buttonGoToSite).click();
     }
@@ -58,5 +60,10 @@ public class WebViewPage extends Page {
     @Step("Verifying the input is displayed")
     public boolean inputUrlIsDisplayed(){
         return elementIsDisplayed(inputUrl);
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(bodyWebView);
     }
 }

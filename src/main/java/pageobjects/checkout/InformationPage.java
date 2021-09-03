@@ -13,6 +13,7 @@ public class InformationPage extends Page {
     private final By inputPassword = MobileBy.AccessibilityId("test-Last Name");
     private final By inputZipcode = MobileBy.AccessibilityId("test-Zip/Postal Code");
     private final By buttonContinue = MobileBy.AccessibilityId("test-CONTINUE");
+    private final By bodyInfo = MobileBy.AccessibilityId("test-Checkout: Your Info");
 
     public InformationPage(AndroidDriver<AndroidElement> driver) {
         super(driver, 5);
@@ -20,9 +21,10 @@ public class InformationPage extends Page {
 
     @Step("Filling the form with firstname: {0}, lastname: {1}, zipcode: {2}")
     public void fillForm(String firstname, String lastname, String zipcode){
+        waitPageToLoad();
         Log.info("Filling firstname");
         Log.debug("Firstname: " + firstname);
-        $$(inputUsername).sendKeys(firstname);
+        $(inputUsername).sendKeys(firstname);
         Log.info("Filling lastname");
         Log.debug("Lastname: " + lastname);
         $(inputPassword).sendKeys(lastname);
@@ -31,5 +33,10 @@ public class InformationPage extends Page {
         $(inputZipcode).sendKeys(zipcode);
         Log.info("Clicking on continue");
         $(buttonContinue).click();
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(bodyInfo);
     }
 }

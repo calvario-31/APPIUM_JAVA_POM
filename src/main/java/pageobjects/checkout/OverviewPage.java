@@ -19,7 +19,7 @@ public class OverviewPage extends Page {
 
     @Step("Getting item total")
     public double getTotal(){
-        $$(listItems);
+        waitPageToLoad();
         Log.info("Getting item total");
         String priceText = $textContains(labelItemTotal).getText();
         Log.debug("Item total: " + priceText);
@@ -30,5 +30,10 @@ public class OverviewPage extends Page {
     public void finishCheckout(){
         Log.info("Clicking on finish button");
         $description(buttonFinish).click();
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(listItems);
     }
 }

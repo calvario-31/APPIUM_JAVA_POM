@@ -20,7 +20,7 @@ public class ItemDetailPage extends Page {
 
     @Step("Add item: {0} to cart with price: {1}")
     public void addToCart(String itemName, double itemPrice){
-        $$(buttonBackToProducts);
+        waitPageToLoad();
         Log.info("Verifying item name is displayed");
         Log.debug("Item name: " + itemName);
         $text(itemName);
@@ -32,5 +32,10 @@ public class ItemDetailPage extends Page {
         $description(buttonAddToCart).click();
         Log.info("Clicking on back to products");
         $(buttonBackToProducts).click();
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(buttonBackToProducts);
     }
 }

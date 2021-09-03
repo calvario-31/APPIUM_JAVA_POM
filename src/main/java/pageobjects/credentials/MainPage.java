@@ -23,9 +23,10 @@ public class MainPage extends Page {
 
     @Step("Login into the app with username {0} and password {1}")
     public void login(String username, String password){
+        waitPageToLoad();
         Log.info("Filling username");
         Log.debug("Username: " + username);
-        $$(inputUsername).sendKeys(username);
+        $(inputUsername).sendKeys(username);
         Log.info("Filling password");
         Log.debug("Password: " + password);
         $(inputPassword).sendKeys(password);
@@ -35,8 +36,7 @@ public class MainPage extends Page {
 
     @Step("Login with locked out user")
     public void loginLockedOutUser(){
-        Log.info("Waiting to button login to appear");
-        $$(buttonLogin);
+        waitPageToLoad();
         Log.info("Scrolling into locked out user and click");
         $description(lockedOutUser).click();
         Log.info("Scrolling to top");
@@ -47,8 +47,7 @@ public class MainPage extends Page {
 
     @Step("Login with standard user")
     public void loginStandardUser(){
-        Log.info("Waiting to button login to appear");
-        $$(buttonLogin);
+        waitPageToLoad();
         Log.info("Scrolling into standard out user and click");
         $description(standardUser).click();
         Log.info("Scrolling to top");
@@ -66,5 +65,10 @@ public class MainPage extends Page {
     @Step("Verifying title is displayed")
     public boolean titleIsDisplayed(){
         return elementIsDisplayed(title);
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(title);
     }
 }

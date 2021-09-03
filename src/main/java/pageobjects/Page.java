@@ -48,15 +48,17 @@ public abstract class Page {
         }
     }
 
-    public void toTop(){
+    protected void toTop(){
         gestures.scrollToTop();
     }
 
-    public void generalSwipe(int x1, int y1, int x2, int y2){
+    protected void generalSwipe(int x1, int y1, int x2, int y2){
         gestures.generalSwipeByPercentages(x1, y1, x2, y2);
     }
 
-    public void pressBack(){
+    protected void pressBack(){
         gestures.pressBack();
     }
+
+    protected abstract void waitPageToLoad();
 }

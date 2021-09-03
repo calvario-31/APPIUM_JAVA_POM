@@ -19,7 +19,7 @@ public class DrawingPage extends Page {
 
     @Step("Drawing x on the canvas")
     public void drawX(){
-        $$(buttonClear);
+        waitPageToLoad();
         Log.info("Drawing x on the canvas");
         generalSwipe(30, 30, 60, 60);
         generalSwipe(60, 30, 30, 60);
@@ -29,5 +29,10 @@ public class DrawingPage extends Page {
         $$(buttonOk).click();
         Log.info("Clicking on clear button");
         $$(buttonClear).click();
+    }
+
+    @Override
+    protected void waitPageToLoad() {
+        $$(buttonClear);
     }
 }
