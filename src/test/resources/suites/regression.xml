@@ -16,4 +16,22 @@
             <package name="credentials"/>
         </packages>
     </test>
+
+    <test name="draw">
+        <packages>
+            <package name="draw"/>
+        </packages>
+    </test>
+
+    <test name="shopping">
+        <packages>
+            <package name="shopping"/>
+        </packages>
+    </test>
+
+    <test name="webview">
+        <packages>
+            <package name="webview"/>
+        </packages>
+    </test>
 </suite>

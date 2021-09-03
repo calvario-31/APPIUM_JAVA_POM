@@ -7,7 +7,7 @@ import io.qameta.allure.TmsLink;
 import models.CredentialsModel;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pageobjects.MainPage;
+import pageobjects.credentials.MainPage;
 import utilities.Base;
 import utilities.DataReader;
 

@@ -1,5 +1,6 @@
 package utilities;
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -19,6 +20,7 @@ public abstract class Base {
         File fileAPK = new File("src/main/resources/apk/sauceLabs.apk");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
         capabilities.setCapability("autoGrantPermissions", true);
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "mobile_emulator");

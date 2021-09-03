@@ -22,6 +22,14 @@ public abstract class Page {
         return gestures.scrollIntoDescription(description);
     }
 
+    protected AndroidElement $text(String text){
+        return gestures.scrollIntoText(text);
+    }
+
+    protected AndroidElement $textContains(String text){
+        return gestures.scrollIntoTextContains(text);
+    }
+
     protected AndroidElement $(By locator){
         return driver.findElement(locator);
     }
@@ -42,5 +50,13 @@ public abstract class Page {
 
     public void toTop(){
         gestures.scrollToTop();
+    }
+
+    public void generalSwipe(int x1, int y1, int x2, int y2){
+        gestures.generalSwipeByPercentages(x1, y1, x2, y2);
+    }
+
+    public void pressBack(){
+        gestures.pressBack();
     }
 }
