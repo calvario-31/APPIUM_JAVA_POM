@@ -22,7 +22,7 @@ public class MainPage extends Page {
     }
 
     @Step("Login into the app with username {0} and password {1}")
-    public void login(String username, String password){
+    public void login(String username, String password) {
         waitPageToLoad();
         Log.info("Filling username");
         Log.debug("Username: " + username);
@@ -35,7 +35,7 @@ public class MainPage extends Page {
     }
 
     @Step("Login with locked out user")
-    public void loginLockedOutUser(){
+    public void loginLockedOutUser() {
         waitPageToLoad();
         Log.info("Scrolling into locked out user and click");
         $description(lockedOutUser).click();
@@ -46,7 +46,7 @@ public class MainPage extends Page {
     }
 
     @Step("Login with standard user")
-    public void loginStandardUser(){
+    public void loginStandardUser() {
         waitPageToLoad();
         Log.info("Scrolling into standard out user and click");
         $description(standardUser).click();
@@ -57,13 +57,13 @@ public class MainPage extends Page {
     }
 
     @Step("Verifying error message is displayed")
-    public boolean errorMessageIsDisplayed(){
+    public boolean errorMessageIsDisplayed() {
         Log.info("Verifying error message is displayed");
         return elementIsDisplayed(errorMessage);
     }
 
     @Step("Verifying title is displayed")
-    public boolean titleIsDisplayed(){
+    public boolean titleIsDisplayed() {
         return elementIsDisplayed(title);
     }
 

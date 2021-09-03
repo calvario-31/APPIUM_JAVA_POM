@@ -16,7 +16,7 @@ import java.net.URL;
 public abstract class Base {
     protected AndroidDriver<AndroidElement> driver;
 
-    protected void setup(){
+    protected void setup() {
         String APPIUM_URL_SERVER = "http://localhost:4723/wd/hub";
 
         File fileAPK = new File("src/main/resources/apk/sauceLabs.apk");
@@ -37,8 +37,8 @@ public abstract class Base {
         }
     }
 
-    protected void teardown(){
-        if(driver != null){
+    protected void teardown() {
+        if (driver != null) {
             driver.quit();
         }
     }

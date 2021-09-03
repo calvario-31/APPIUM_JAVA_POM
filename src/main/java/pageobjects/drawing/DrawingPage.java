@@ -18,7 +18,7 @@ public class DrawingPage extends Page {
     }
 
     @Step("Drawing x on the canvas")
-    public void drawX(){
+    public void drawX() {
         waitPageToLoad();
         Log.info("Drawing x on the canvas");
         generalSwipe(30, 30, 60, 60);

@@ -17,7 +17,7 @@ public class YourCartPage extends Page {
     }
 
     @Step("Clicking on continue checkout")
-    public void continueCheckout(){
+    public void continueCheckout() {
         waitPageToLoad();
         Log.info("Clicking on continue checkout");
         $description(buttonCheckout).click();

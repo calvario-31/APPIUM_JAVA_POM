@@ -49,7 +49,7 @@ public class ShoppingTest extends Base {
         itemDetailPage = new ItemDetailPage(driver);
 
         double sum = 0;
-        for (ShoppingItemModel shoppingItemModel: itemList) {
+        for (ShoppingItemModel shoppingItemModel : itemList) {
             shoppingPage.goToDetail(shoppingItemModel.getName());
             itemDetailPage.addToCart(shoppingItemModel.getName(), shoppingItemModel.getPrice());
             sum += shoppingItemModel.getPrice();
@@ -86,7 +86,7 @@ public class ShoppingTest extends Base {
     }
 
     @DataProvider(name = "shopping dp")
-    public Object[][] shoppingDP(){
+    public Object[][] shoppingDP() {
         return new Object[][]{
                 {new DataReader().getShoppingList(), new UserDataModel()}
         };

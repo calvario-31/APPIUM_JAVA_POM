@@ -16,14 +16,14 @@ public class ShoppingPage extends Page {
     }
 
     @Step("Going to detail of item: {0}")
-    public void goToDetail(String itemName){
+    public void goToDetail(String itemName) {
         waitPageToLoad();
         Log.info("Clicking on the item name");
         $text(itemName).click();
     }
 
     @Step("Verify shopping page is displayed")
-    public boolean shoppingPageIsDisplayed(){
+    public boolean shoppingPageIsDisplayed() {
         Log.info("Verify shopping page is displayed");
         return elementIsDisplayed(title);
     }

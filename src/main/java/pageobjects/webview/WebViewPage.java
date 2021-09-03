@@ -21,7 +21,7 @@ public class WebViewPage extends Page {
     }
 
     @Step("Going to web page {0}")
-    public void goToWebPage(String url){
+    public void goToWebPage(String url) {
         waitPageToLoad();
         Log.info("Filling the url input");
         Log.debug("Url: " + url);
@@ -31,7 +31,7 @@ public class WebViewPage extends Page {
     }
 
     @Step("Do something on the web page")
-    public void loginOnWeb(String username, String password){
+    public void loginOnWeb(String username, String password) {
         By inputUsername = By.id("user-name");
         By inputPassword = By.id("password");
         By buttonLogin = By.id("login-button");
@@ -58,7 +58,7 @@ public class WebViewPage extends Page {
     }
 
     @Step("Verifying the input is displayed")
-    public boolean inputUrlIsDisplayed(){
+    public boolean inputUrlIsDisplayed() {
         return elementIsDisplayed(inputUrl);
     }
 

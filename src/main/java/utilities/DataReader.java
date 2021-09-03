@@ -11,11 +11,11 @@ public class DataReader {
     private final String EXCEL_PATH = "src/test/resources/data/testData.xlsx";
     private final String sauceLabsUrl = "https://www.saucedemo.com";
 
-    public CredentialsModel getStandardCredentials(){
+    public CredentialsModel getStandardCredentials() {
         return Poiji.fromExcel(new File(EXCEL_PATH), CredentialsModel.class).get(0);
     }
 
-    public CredentialsModel getLockedOutCredentials(){
+    public CredentialsModel getLockedOutCredentials() {
         return Poiji.fromExcel(new File(EXCEL_PATH), CredentialsModel.class).get(1);
     }
 
@@ -23,7 +23,7 @@ public class DataReader {
         return sauceLabsUrl;
     }
 
-    public List<ShoppingItemModel> getShoppingList(){
+    public List<ShoppingItemModel> getShoppingList() {
         return Poiji.fromExcel(new File(EXCEL_PATH), ShoppingItemModel.class);
     }
 

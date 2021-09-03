@@ -18,7 +18,7 @@ public class OverviewPage extends Page {
     }
 
     @Step("Getting item total")
-    public double getTotal(){
+    public double getTotal() {
         waitPageToLoad();
         Log.info("Getting item total");
         String priceText = $textContains(labelItemTotal).getText();
@@ -27,7 +27,7 @@ public class OverviewPage extends Page {
     }
 
     @Step("Clicking on finish button")
-    public void finishCheckout(){
+    public void finishCheckout() {
         Log.info("Clicking on finish button");
         $description(buttonFinish).click();
     }

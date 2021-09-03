@@ -48,7 +48,7 @@ public class LockedOutUserTest extends Base {
     }
 
     @DataProvider(name = "locked out credentials")
-    public Object[][] lockedOutDataProvider(){
+    public Object[][] lockedOutDataProvider() {
         return new Object[][]{
                 {new DataReader().getLockedOutCredentials()}
         };

@@ -22,7 +22,7 @@ public class TopMenuPage extends Page {
     }
 
     @Step("Logging out")
-    public void logout(){
+    public void logout() {
         waitPageToLoad();
         Log.info("Clicking on the menu burger");
         $(menuBurger).click();
@@ -31,7 +31,7 @@ public class TopMenuPage extends Page {
     }
 
     @Step("Go to drawing")
-    public void goToDrawing(){
+    public void goToDrawing() {
         waitPageToLoad();
         Log.info("Clicking on the menu burger");
         $(menuBurger).click();
@@ -40,7 +40,7 @@ public class TopMenuPage extends Page {
     }
 
     @Step("Go to web view")
-    public void goToWebView(){
+    public void goToWebView() {
         waitPageToLoad();
         Log.info("Clicking on the menu burger");
         $(menuBurger).click();
@@ -49,7 +49,7 @@ public class TopMenuPage extends Page {
     }
 
     @Step("Getting the item count text")
-    public int getItemCount(){
+    public int getItemCount() {
         waitPageToLoad();
         Log.info("Getting the item count text");
         String text = $(itemCount).getText();
@@ -58,7 +58,7 @@ public class TopMenuPage extends Page {
     }
 
     @Step("Going to checkout")
-    public void goToCheckout(){
+    public void goToCheckout() {
         Log.info("Clicking on checkout");
         $(buttonCheckout).click();
     }

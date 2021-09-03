@@ -27,7 +27,7 @@ public class UserDataModel {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "firstname: " + firstname + " " + "lastname: " + lastname + " " + "zipCode: " + zipCode;
     }
 }

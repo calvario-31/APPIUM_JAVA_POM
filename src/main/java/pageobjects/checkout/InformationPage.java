@@ -20,7 +20,7 @@ public class InformationPage extends Page {
     }
 
     @Step("Filling the form with firstname: {0}, lastname: {1}, zipcode: {2}")
-    public void fillForm(String firstname, String lastname, String zipcode){
+    public void fillForm(String firstname, String lastname, String zipcode) {
         waitPageToLoad();
         Log.info("Filling firstname");
         Log.debug("Firstname: " + firstname);

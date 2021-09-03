@@ -19,7 +19,7 @@ public class CredentialsModel {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "username: " + username + " " + "password: " + password;
     }
 }

@@ -44,7 +44,7 @@ public class Gestures {
                 .perform();
     }
 
-    public void longTap(AndroidElement element, int duration){
+    public void longTap(AndroidElement element, int duration) {
         new TouchAction<>(driver)
                 .longPress(longPressOptions()
                         .withElement(element(element))
@@ -53,7 +53,7 @@ public class Gestures {
                 .perform();
     }
 
-    public void generalSwipeByPercentages(int x1, int y1, int x2, int y2){
+    public void generalSwipeByPercentages(int x1, int y1, int x2, int y2) {
         double firstXPercentage = x1 / 100.0;
         double firstYPercentage = y1 / 100.0;
         double secondXPercentage = x2 / 100.0;
@@ -73,12 +73,12 @@ public class Gestures {
                 .perform();
     }
 
-    public void scrollToTop(){
+    public void scrollToTop() {
         driver.findElementByAndroidUIAutomator(
                 "new UiScrollable(scrollable(true)).scrollToBeginning(10)");
     }
 
-    public void pressBack(){
+    public void pressBack() {
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
     }
 }

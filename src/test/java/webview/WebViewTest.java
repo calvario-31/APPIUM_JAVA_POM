@@ -49,11 +49,11 @@ public class WebViewTest extends Base {
         teardown();
     }
 
-    @DataProvider (name = "web view dp")
-    public Object[][] webViewDP(){
+    @DataProvider(name = "web view dp")
+    public Object[][] webViewDP() {
         DataReader dataReader = new DataReader();
         return new Object[][]{
-            {dataReader.getStandardCredentials(), dataReader.getSauceLabsUrl()}
+                {dataReader.getStandardCredentials(), dataReader.getSauceLabsUrl()}
         };
     }
 }

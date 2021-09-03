@@ -23,7 +23,7 @@ public class DrawingTest extends Base {
         setup();
     }
 
-    @Test (dataProvider = "valid credentials", groups = {"regression"})
+    @Test(dataProvider = "valid credentials", groups = {"regression"})
     @Description("Verify the drawing functionality")
     @Severity(SeverityLevel.MINOR)
     @TmsLink("8dvc3IEV")
@@ -48,8 +48,8 @@ public class DrawingTest extends Base {
     }
 
     @DataProvider(name = "valid credentials")
-    public Object[][] validCredentialsDP(){
-        return new Object[][] {
+    public Object[][] validCredentialsDP() {
+        return new Object[][]{
                 {new DataReader().getStandardCredentials()}
         };
     }

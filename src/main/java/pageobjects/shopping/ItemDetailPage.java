@@ -19,7 +19,7 @@ public class ItemDetailPage extends Page {
     }
 
     @Step("Add item: {0} to cart with price: {1}")
-    public void addToCart(String itemName, double itemPrice){
+    public void addToCart(String itemName, double itemPrice) {
         waitPageToLoad();
         Log.info("Verifying item name is displayed");
         Log.debug("Item name: " + itemName);
