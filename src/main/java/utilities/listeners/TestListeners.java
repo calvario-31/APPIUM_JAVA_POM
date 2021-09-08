@@ -1,8 +1,12 @@
 package utilities.listeners;
 
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utilities.Base;
+import utilities.DriverManager;
 import utilities.Log;
 
 public class TestListeners implements ITestListener {
@@ -19,6 +23,8 @@ public class TestListeners implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         Log.endTest("FAILED", result.getName());
+
+        new DriverManager().getScreenshot(getDriverFromResult(result));
     }
 
     @Override
@@ -44,5 +50,10 @@ public class TestListeners implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         ITestListener.super.onFinish(context);
+    }
+
+    private AndroidDriver<AndroidElement> getDriverFromResult(ITestResult result) {
+        Object currentClass = result.getInstance();
+        return ((Base) currentClass).getDriver();
     }
 }
